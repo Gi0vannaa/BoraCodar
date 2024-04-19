@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bora Codar</title>
+</head>
+<script>
+    function numeroMaior() {
+
+    let num1 = parseFloat(prompt("Entre com o numero 1"))
+    let num2 = parseFloat(prompt("Entre com o numero 2"))
+
+
+    if (isNaN(num1) || isNaN(num2)) {
+        alert ("Por favor, insira números válidos!")
+    } else if (num1 > num2) {
+        alert ("O primeiro número é maior.")
+    } else if (num1 === 0 || num2 === 0) {
+        alert("Não deixe em branco!");
+    } else {
+        alert ("O segundo número é maior.")
+    }
+}
+
+function positivoNegativo() {
+
+    let num = parseFloat(prompt("Entre com o numero 1"))
+
+    if (isNaN(num)) {
+        alert ("Por favor, insira números válidos!")
+    } else if (num === 0) {
+        alert ( "O número é zero!")
+    } else if (num > 0) {
+        alert ("O número é positivo!")
+    } else {
+        alert ("O número é negativo!")
+    }
+}
+
+function numeroMaiorTres() {
+
+    let num1 = parseFloat(prompt("Entre com o numero 1"))
+    let num2= parseFloat(prompt("Entre com o numero 2"))
+    let num3 = parseFloat(prompt("Entre com o numero 3"))
+
+
+    if (isNaN(num1) || isNaN(num2)) {
+        alert ("Por favor, insira números válidos!")
+    } else if (num1 == num2 || num2 == num3 || num3 == num1) {
+        alert("Os valores nao podem ser iguais!")
+    } else if (num1 < num2 && num3 < num2) {
+        alert ("O segundo número é maior.")
+    } else if (num3 > num2) {
+        alert ("O terceiro número é maior.")
+    } else {
+        alert ("O primeiro número é maior.")
+    }
+}
+
+function maiorIgual() {
+
+    event.preventDefault()
+    let num1 = parseFloat(document.getElementById('4num1').value);
+    let num2 = parseFloat(document.getElementById('4num2').value);
+    let result = document.getElementById('resultado4');
+
+
+    if (num1 == num2) {
+        result.innerHTML = "Números iguais!"
+    } else if (num1 > num2) {
+        result.innerHTML = "O primeiro é maior!"
+    } else {
+        result.innerHTML = "O segundo é maior!"
+
+    }
+}
+
+function lerDezNumeros() {
+
+    let soma = 0;
+
+    for (let i = 0; i < 10; i++) {
+        let valor = parseFloat(prompt(`Informe o ${i + 1}º valor:`));
+
+        if (isNaN(valor)) {
+            alert("Por favor, insira um valor numérico válido.");
+            break;
+        }
+
+        soma += valor;
+    }
+
+    let media = soma / 10;
+    alert(`A média aritmética dos valores informados é: ${media.toFixed(2)}.`);
+
+
+
+}
+
+function somaDezNumeros() {
+    let soma = 0;
+
+    for (let i = 0; i < 10; i++) {
+        let numero = parseInt(prompt("Digite um número"));
+
+        if (isNaN(numero)) {
+            alert("Por favor, insira um número válido.");
+            return; // Encerra a função se um número inválido for inserido
+        }
+
+        soma += numero;
+    }
+
+    alert("A soma dos 10 números é: " + soma);
+}
+
+
+function lerSeisNumeros() {
+
+
+    let numeros = []
+    let soma = 0
+
+    for (let i = 0; i < 6; i++) {
+        let numero = parseInt(prompt("Digite um numero"))
+
+        if (soma <= 72) {
+            soma += numero
+        } else {
+            alert("Passou de 72!")
+        }
+
+        numeros.push(numero)
+    }
+
+   document.write(`Valor 1: ${numeros[0]}<br />
+                        Valor 2: ${numeros[1]}<br />
+                        Valor 3: ${numeros[2]}<br />
+                        Valor 4: ${numeros[3]}<br />
+                        Valor 5: ${numeros[4]}<br />
+                        Valor 6: ${numeros[5]}<br />
+                        Total: ${soma}<br />`)
+
+    // alert(`Valor 1 ${numeros[0]}\n
+    // Valor 2: ${numeros[1]}\n
+    // Valor 3: ${numeros[2]}\n
+    // Valor 4: ${numeros[3]}\n
+    // Valor 5: ${numeros[4]}\n
+    // Valor 6: ${numeros[5]}\n
+    // Total: ${soma}\nNão passou de 72!`)
+
+
+
+
+}
+
+function calculaMedia() {
+
+    let i = 1
+    let nota = 0
+    let notas = [] // criei um array
+
+    for (i = 0; i < 4; i++) {
+        do {
+            nota = parseInt(prompt("Digite a nota"))
+
+        } while (nota <= 0 || nota >= 10)
+
+        notas.push(nota) // aramazeno o valor digitado dentro do array notas criando um novo indice
+        media = (notas[0] + notas[1] + notas[2] + notas[3]) / 4 // acesso os valores de cada nota pelo seu indice
+
+        if(media > 5){
+            document.write( `Nota 1: ${notas[0]}<br />
+            Nota 2: ${notas[1]}<br />
+            Nota 3: ${notas[2]} <br/>
+            Media: ${media.toFixed(2)}<br />
+            Voce passou no teste :)!<br/>
+            Tente novamente!`)
+        }else{
+            document.write ( `Nota 1: ${notas[0]}<br />
+            Nota 2: ${notas[1]}<br />
+            Nota 3: ${notas[2]} <br/>
+            Media: ${media.toFixed(2)}<br />
+            Voce não passou! :( <br/>
+            Tente novamente!`)
+        }
+
+    }
+
+
+
+
+}
+function votar(){
+
+    let anoAtual = 2024
+    let anoNascimento = parseInt(prompt("Digite seu ano de nascimento"))
+
+    let idade = anoAtual - anoNascimento
+    if(idade < 18){
+        alert  ("Não pode votar!")
+    }else{
+        alert  ("Pode votar!")    }
+}
+
+function validaSenha(){
+    let senha = parseInt(prompt("Digite sua senha"))
+
+    if(senha != 1234){
+       alert("Acesso negado!")
+    }else{
+        alert("Acesso permitido!")
+    }
+}
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
