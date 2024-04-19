@@ -60,18 +60,17 @@ function numeroMaiorTres() {
 
 function maiorIgual() {
 
-    event.preventDefault()
-    let num1 = parseFloat(document.getElementById('4num1').value);
-    let num2 = parseFloat(document.getElementById('4num2').value);
+    let num1 = parseFloat(document.getElementById('4num1'));
+    let num2 = parseFloat(document.getElementById('4num2'));
     let result = document.getElementById('resultado4');
 
 
     if (num1 == num2) {
-        result.innerHTML = "Números iguais!"
+       alert ("Números iguais!")
     } else if (num1 > num2) {
-        result.innerHTML = "O primeiro é maior!"
+        alert ("O primeiro é maior!")
     } else {
-        result.innerHTML = "O segundo é maior!"
+        alert ("O segundo é maior!")
 
     }
 }
